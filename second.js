@@ -82,7 +82,7 @@ const LearnerSubmissions = [
 // CourseInfo();
 
 function callID() {
-  // creating a for in loop to retrieve the two ids
+  // creating a (for of loop) to retrieve the id since it's an array of objects
   for (const d of LearnerSubmissions) {
     return `${LearnerSubmissions[0].learner_id}`;
   }
@@ -90,8 +90,7 @@ function callID() {
 
 console.log(callID());
 
-// creating a loop to get the other id without a function then put them both in a funtion
-
+// a for of loop to get the other learner's ID
 function callID2() {
   for (const d2 of LearnerSubmissions) {
     return `${LearnerSubmissions[3].learner_id}`;
