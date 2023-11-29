@@ -1,3 +1,3 @@
 # JavaScript-Fundamentals
 
-Manipulating and retrieving data from a arrays and objects using methods, control flow, conditions and functions.
+Manipulating and retrieving data from an arrays and objects using methods, control flow, conditions and functions.

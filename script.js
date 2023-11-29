@@ -6,11 +6,13 @@ function calAverage(a, b, c) {
   return averageNum;
 }
 
+// an object of the course
 const courseInfo = {
   id: 451,
   name: "introduction to JavaScript",
 };
 
+// an object of the assignment and an array of assignment info
 const assignmentGroup = {
   id: 12345,
   name: "Fundamentals of JavaScript",
@@ -38,6 +40,58 @@ const assignmentGroup = {
   ],
 };
 
+// an array of objects
+const LearnerSubmissions = [
+  {
+    learner_id: 125,
+    assignment_id: 1,
+    submission: {
+      submitted_at: "2023-01-25",
+      score: 47,
+    },
+  },
+  {
+    learner_id: 125,
+    assignment_id: 2,
+    submission: {
+      submitted_at: "2023-02-12",
+      score: 150,
+    },
+  },
+  {
+    learner_id: 125,
+    assignment_id: 3,
+    submission: {
+      submitted_at: "2023-01-25",
+      score: 400,
+    },
+  },
+  {
+    learner_id: 132,
+    assignment_id: 1,
+    submission: {
+      submitted_at: "2023-01-24",
+      score: 39,
+    },
+  },
+  {
+    learner_id: 132,
+    assignment_id: 2,
+    submission: {
+      submitted_at: "2023-03-07",
+      score: 140,
+    },
+  },
+];
+
 console.log(calAverage(9, 4, 10));
 
 // creating a function to call the id of the learner
+
+// function to retrieve info from the courseInFo
+const callCourse = function () {
+  for (const c in courseInfo) {
+    return `${c}: ${courseInfo[c]}`;
+  }
+};
+console.log(callCourse());
