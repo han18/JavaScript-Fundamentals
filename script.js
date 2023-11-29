@@ -1,4 +1,10 @@
-console.log("hello");
+// created a function that calculates all point_possible average
+
+function calAverage(a, b, c) {
+  // Number to convert a string into a number
+  const averageNum = Number(a + b + c) / 3;
+  return averageNum;
+}
 
 const courseInfo = {
   id: 451,
@@ -31,3 +37,7 @@ const assignmentGroup = {
     },
   ],
 };
+
+console.log(calAverage(9, 4, 10));
+
+// creating a function to call the id of the learner
