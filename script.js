@@ -1,5 +1,3 @@
-// created a function that calculates all point_possible average
-
 function calAverage(a, b, c) {
   // Number to convert a string into a number
   const averageNum = Number(a + b + c) / 3;
@@ -84,6 +82,7 @@ const LearnerSubmissions = [
   },
 ];
 
+//=======================
 console.log(calAverage(9, 4, 10));
 
 // creating a function to call the id of the learner
@@ -95,3 +94,49 @@ const callCourse = function () {
   }
 };
 console.log(callCourse());
+
+// put the courseID into a variable
+const course = callCourse();
+console.log(course);
+
+// ===================================
+
+// const assignPoints = LearnerSubmissions.forEach((LearnerSubmissions) => {});
+
+const a = LearnerSubmissions[0].submission.score;
+const b = LearnerSubmissions[1].submission.score;
+const add = a + b;
+console.log(add);
+
+const w =
+  assignmentGroup.assignmentsInfo[1].points_possible +
+  assignmentGroup.assignmentsInfo[2].points_possible;
+
+// const t = assignmentGroup.assignmentsInfo[2].points_possible;
+
+console.log(w);
+// console.log(t);
+
+//======================================
+// creating a function to call any learner id giving
+function callLearner() {
+  //   const learnCall = ""; see it I need a variable to store the id
+  //   const learnCall = LearnerSubmissions[0].learner_id;
+  // using the for of loop since it's object array structured
+  for (const l in LearnerSubmissions[0].submission.score) {
+    return LearnerSubmissions[l];
+  }
+}
+
+console.log(callLearner());
+
+// new one for submission
+
+// creating an object to hold the user's data
+const learnerData = {};
+
+// iterate through the submissions
+
+LearnerSubmissions.forEach(function (LearnerSubmissions) {
+  console.log(LearnerSubmissions);
+});
