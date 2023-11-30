@@ -40,7 +40,7 @@ const assignmentGroup = {
       id: 3,
       name: "Code the World",
       due_at: "3156-11-15",
-      points_possible: 500,
+      points_possible: 125,
     },
   ],
 };
@@ -163,6 +163,7 @@ function addAll(a, b, c, d) {
   return (a + b) / (c + d);
 }
 
+// just logging the results
 console.log(
   addAll(
     LearnerSubmissions[0].submission.score,
@@ -183,3 +184,13 @@ const firstStudent = addAll(
 );
 
 console.log(firstStudent);
+
+// Second student average variable .. Note I changed possible_points last index[2] to 125 from 500 because 125 wasn't listed
+const secondStudent = addAll(
+  LearnerSubmissions[3].submission.score,
+  assignmentGroup.assignments[2].points_possible,
+  LearnerSubmissions[1].submission.score,
+  assignmentGroup.assignments[0].points_possible
+);
+
+console.log(secondStudent);
