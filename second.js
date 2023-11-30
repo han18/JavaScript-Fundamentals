@@ -158,7 +158,7 @@ let addThem2 =
   assignmentGroup.assignments[0].points_possible;
 console.log(addThem2);
 ///////////////// creating only functions
-// this does the adding
+// this does the adding and dividing
 function addAll(a, b, c, d) {
   return (a + b) / (c + d);
 }
@@ -172,5 +172,14 @@ console.log(
   )
 );
 
-// // creating a function the gets the avarage
-// function avarage()
+// we could put the function addAll in its own variable for the first student so that I could have less storage
+
+// first student average variable
+const firstStudent = addAll(
+  LearnerSubmissions[0].submission.score,
+  assignmentGroup.assignments[1].points_possible,
+  LearnerSubmissions[1].submission.score,
+  assignmentGroup.assignments[0].points_possible
+);
+
+console.log(firstStudent);
