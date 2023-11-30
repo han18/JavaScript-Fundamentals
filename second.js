@@ -157,3 +157,20 @@ let addThem2 =
   LearnerSubmissions[0].submission.score +
   assignmentGroup.assignments[0].points_possible;
 console.log(addThem2);
+///////////////// creating only functions
+// this does the adding
+function addAll(a, b, c, d) {
+  return (a + b) / (c + d);
+}
+
+console.log(
+  addAll(
+    LearnerSubmissions[0].submission.score,
+    assignmentGroup.assignments[1].points_possible,
+    LearnerSubmissions[1].submission.score,
+    assignmentGroup.assignments[0].points_possible
+  )
+);
+
+// // creating a function the gets the avarage
+// function avarage()
