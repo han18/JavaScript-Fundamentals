@@ -137,6 +137,7 @@ const learnerData = {};
 
 // iterate through the submissions
 
+// using a forEach method
 LearnerSubmissions.forEach(function (LearnerSubmissions) {
   console.log(LearnerSubmissions);
 });

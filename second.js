@@ -17,6 +17,7 @@ console.log(callCourse());
 /////======================
 console.log("=========================");
 
+console.log("======================================");
 // an array of objects
 const LearnerSubmissions = [
   {
@@ -98,3 +99,28 @@ function callID2() {
 }
 
 console.log(callID2());
+
+// getting the students average
+
+function averageCount(learn1, learn2) {
+  for (let i = 0; i < LearnerSubmissions.length; i++) {
+    let learn1 = LearnerSubmissions[i].submission.score;
+    return learn1;
+  }
+  for (let z = 0; z < LearnerSubmissions.length; z++) {
+    let learn2 = LearnerSubmissions[i][1].submission.score;
+    return learn2;
+  }
+}
+
+console.log(averageCount());
+console.log(averageCount(LearnerSubmissions[1].submission.score));
+
+console.log(LearnerSubmissions[0].submission.score);
+console.log(LearnerSubmissions[1].submission.score);
+
+const addThem =
+  LearnerSubmissions[0].submission.score +
+  LearnerSubmissions[1].submission.score;
+
+console.log(addThem);
