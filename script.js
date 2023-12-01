@@ -154,3 +154,27 @@ let addThem2 =
   LearnerSubmissions[0].submission.score +
   assignmentGroup.assignments[0].points_possible;
 console.log(addThem2);
+
+// code for recap on how to get all the data from the one key place
+function CourseInfo() {
+  for (let i = 0; i < LearnerSubmissions.length; i++) {
+    console.log(LearnerSubmissions[i].learner_id);
+  }
+}
+
+CourseInfo();
+
+// this code was in  the second.js there but don't know if I need it i"m storing it here
+// getting the students score
+function averageCount(learn1, learn2) {
+  for (let i = 0; i < LearnerSubmissions.length; i++) {
+    let learn1 = LearnerSubmissions[i].submission.score;
+    return learn1;
+  }
+  for (let z = 0; z < LearnerSubmissions.length; z++) {
+    let learn2 = LearnerSubmissions[i][1].submission.score;
+    return learn2;
+  }
+}
+
+console.log(averageCount());

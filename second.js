@@ -105,19 +105,12 @@ const LearnerSubmissions = [
 //   );
 // }
 
-// function CourseInfo() {
-//   for (let i = 0; i < LearnerSubmissions.length; i++) {
-//     console.log(LearnerSubmissions[i].learner_id);
-//   }
-// }
-
-// CourseInfo();
-
+//=================== ID functions====================
 // first learner's ID
 function callID() {
   // creating a (for of loop) to retrieve the id since it's an array of objects
   for (const d of LearnerSubmissions) {
-    return `${LearnerSubmissions[0].learner_id}`;
+    return ` ID: ${LearnerSubmissions[0].learner_id}`;
   }
 }
 
@@ -127,34 +120,22 @@ console.log(callID());
 // a (for of loop) to get the other learner's ID
 function callID2() {
   for (const d2 of LearnerSubmissions) {
-    return `${LearnerSubmissions[3].learner_id}`;
+    return ` ID: ${LearnerSubmissions[3].learner_id}`;
   }
 }
 
 console.log(callID2());
+console.log("======================================");
 
-//==================================
-// getting the students score
-function averageCount(learn1, learn2) {
-  for (let i = 0; i < LearnerSubmissions.length; i++) {
-    let learn1 = LearnerSubmissions[i].submission.score;
-    return learn1;
-  }
-  for (let z = 0; z < LearnerSubmissions.length; z++) {
-    let learn2 = LearnerSubmissions[i][1].submission.score;
-    return learn2;
-  }
-}
+//================================== END ID Functions ==============
 
-console.log(averageCount());
-
-///////////////// creating only functions
+////================ Average Calculation Function ===========
 // this does the adding and dividing
 function addAll(a, b, c, d) {
   return (a + b) / (c + d);
 }
 
-// just logging the results
+// just logging the results directly from the function
 console.log(
   addAll(
     LearnerSubmissions[0].submission.score,
@@ -188,3 +169,16 @@ const secondStudent = addAll(
 console.log(secondStudent);
 
 // let uniqueID = [...new]
+
+/// ============== Score - possible_points calculation =====
+/// it's a function to divide two numbers ==========
+function scorePoints(h, p) {
+  return h / p;
+}
+
+console.log(scorePoints(10, 2));
+
+console.log(
+  LearnerSubmissions[0].submission.score,
+  assignmentGroup.assignments[0].points_possible
+);
