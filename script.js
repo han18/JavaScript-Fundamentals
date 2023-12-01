@@ -141,3 +141,16 @@ const learnerData = {};
 LearnerSubmissions.forEach(function (LearnerSubmissions) {
   console.log(LearnerSubmissions);
 });
+
+/// this is just to recap that i could add objects in array and vise versa
+const addThem =
+  LearnerSubmissions[0].submission.score +
+  LearnerSubmissions[1].submission.score;
+
+console.log(addThem);
+
+// this is also just to recap the process of how to access objects and arrays and add them
+let addThem2 =
+  LearnerSubmissions[0].submission.score +
+  assignmentGroup.assignments[0].points_possible;
+console.log(addThem2);

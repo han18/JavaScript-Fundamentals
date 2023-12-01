@@ -1,5 +1,7 @@
 // this is to work easily on the code
 
+// there must be a variable that holds the whole
+
 // an object of the course
 const courseInfo = {
   id: 451,
@@ -9,7 +11,7 @@ const courseInfo = {
 // function to retrieve info from the courseInFo
 const callCourse = function () {
   for (const c in courseInfo) {
-    return `${c}: ${courseInfo[c]}`;
+    return `${c}: ${courseInfo.id}`;
   }
 };
 console.log(callCourse());
@@ -90,10 +92,11 @@ const LearnerSubmissions = [
   },
 ];
 
+//========================= end of LearnerSubmission =========
+
 // console.log(LearnerSubmissions[4].submission.score);
 
-// now looping into an array to get some data
-
+// now looping into an array to get some data.. this was a good catch
 // for (let i = 0; i < LearnerSubmissions.length; i++) {
 //   console.log(
 //     LearnerSubmissions[i].learner_id,
@@ -110,6 +113,7 @@ const LearnerSubmissions = [
 
 // CourseInfo();
 
+// first learner's ID
 function callID() {
   // creating a (for of loop) to retrieve the id since it's an array of objects
   for (const d of LearnerSubmissions) {
@@ -119,7 +123,8 @@ function callID() {
 
 console.log(callID());
 
-// a for of loop to get the other learner's ID
+/// second Leaner's ID
+// a (for of loop) to get the other learner's ID
 function callID2() {
   for (const d2 of LearnerSubmissions) {
     return `${LearnerSubmissions[3].learner_id}`;
@@ -128,8 +133,8 @@ function callID2() {
 
 console.log(callID2());
 
-// getting the students average
-
+//==================================
+// getting the students score
 function averageCount(learn1, learn2) {
   for (let i = 0; i < LearnerSubmissions.length; i++) {
     let learn1 = LearnerSubmissions[i].submission.score;
@@ -142,21 +147,7 @@ function averageCount(learn1, learn2) {
 }
 
 console.log(averageCount());
-console.log(averageCount(LearnerSubmissions[1].submission.score));
 
-console.log(LearnerSubmissions[0].submission.score);
-console.log(LearnerSubmissions[1].submission.score);
-
-const addThem =
-  LearnerSubmissions[0].submission.score +
-  LearnerSubmissions[1].submission.score;
-
-console.log(addThem);
-
-let addThem2 =
-  LearnerSubmissions[0].submission.score +
-  assignmentGroup.assignments[0].points_possible;
-console.log(addThem2);
 ///////////////// creating only functions
 // this does the adding and dividing
 function addAll(a, b, c, d) {
@@ -185,6 +176,7 @@ const firstStudent = addAll(
 
 console.log(firstStudent);
 
+//================ second Student
 // Second student average variable .. Note I changed possible_points last index[2] to 125 from 500 because 125 wasn't listed
 const secondStudent = addAll(
   LearnerSubmissions[3].submission.score,
@@ -194,3 +186,5 @@ const secondStudent = addAll(
 );
 
 console.log(secondStudent);
+
+// let uniqueID = [...new]
