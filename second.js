@@ -3,15 +3,15 @@
 // there must be a variable that holds the whole
 
 // an object of the course
-const courseInfo = {
+const CourseInfo = {
   id: 451,
   name: "introduction to JavaScript",
 };
 
 // function to retrieve info from the courseInFo
 const callCourse = function () {
-  for (const c in courseInfo) {
-    return `${c}: ${courseInfo.id}`;
+  for (const c in CourseInfo) {
+    return `${c}: ${CourseInfo.id}`;
   }
 };
 console.log(callCourse());
@@ -177,7 +177,7 @@ function scorePoints(h, p) {
 }
 // logged the function to check if it's working, and it is
 console.log(scorePoints(10, 2));
-/// ================== END of this function
+/// =============================== END of this function
 
 ///ONE: first student division score/point_possible =========
 // stored the results in an variable
@@ -231,4 +231,24 @@ function theResults() {
   return allData;
 }
 
-console.log(theResults());
+// console.log(theResults());
+
+// new function
+
+function getLearnerData(course, avg, sub) {
+  const allData = [
+    {
+      course: callID(),
+      avg: firstStudent,
+      sub: `1: ${firstScore}, 2: ${firstScore1}`,
+    },
+    {
+      course: callID2(),
+      avg: secondStudent,
+      sub: firstScore1,
+    },
+  ];
+  return allData;
+}
+
+console.log(getLearnerData(CourseInfo, assignmentGroup, assignmentGroup));
