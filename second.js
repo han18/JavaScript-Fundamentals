@@ -145,7 +145,7 @@ console.log(
   )
 );
 
-// we could put the function addAll in its own variable for the first student so that I could have less storage
+// we could put the function addAll in its own variable for the first student so that I could have easy access
 
 // first student average variable
 const firstStudent = addAll(
@@ -175,10 +175,60 @@ console.log(secondStudent);
 function scorePoints(h, p) {
   return h / p;
 }
-
+// logged the function to check if it's working, and it is
 console.log(scorePoints(10, 2));
+/// ================== END of this function
 
-console.log(
+///ONE: first student division score/point_possible =========
+// stored the results in an variable
+const firstScore = scorePoints(
   LearnerSubmissions[0].submission.score,
   assignmentGroup.assignments[0].points_possible
 );
+console.log(firstScore);
+
+// TWO: using the same division function & doing the second division part score/point_possible
+// stored the second calculation in a variable
+const firstScore1 = scorePoints(
+  LearnerSubmissions[1].submission.score,
+  assignmentGroup.assignments[1].points_possible
+);
+
+//======== END of first student's calculation ======
+
+//========= Second student score and points division ====
+// using the same division function scorePoinst()
+
+// ONE: creating a variable to store the calculation of first part
+const secondScore = scorePoints(
+  LearnerSubmissions[3].submission.score,
+  assignmentGroup.assignments[0].points_possible
+);
+console.log(secondScore);
+
+// Two: second part of the score / point_possible
+// it needs it's own function because it's extra calculation for the late submission
+const secondLateScore = function () {
+  const count =
+    (LearnerSubmissions[4].submission.score - 15) /
+    assignmentGroup.assignments[1].points_possible;
+  return count;
+};
+
+console.log(secondLateScore());
+
+// creating a function to hold and retrieve the data
+
+function theResults() {
+  const allData = [
+    {
+      id: callCourse,
+      avg: firstStudent,
+      1: secondScore,
+      2: secondScore,
+    },
+  ];
+  return allData;
+}
+
+console.log(theResults());
