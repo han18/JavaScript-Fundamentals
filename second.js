@@ -20,7 +20,7 @@ console.log(callCourse());
 console.log("=========================");
 
 // an object of the assignment course and an [array] of assignment info
-const assignmentGroup = {
+const AssignmentGroup = {
   id: 12345,
   name: "Fundamentals of JavaScript",
   course_id: 451,
@@ -139,9 +139,9 @@ function addAll(a, b, c, d) {
 console.log(
   addAll(
     LearnerSubmissions[0].submission.score,
-    assignmentGroup.assignments[1].points_possible,
+    AssignmentGroup.assignments[1].points_possible,
     LearnerSubmissions[1].submission.score,
-    assignmentGroup.assignments[0].points_possible
+    AssignmentGroup.assignments[0].points_possible
   )
 );
 
@@ -150,9 +150,9 @@ console.log(
 // first student average variable
 const firstStudent = addAll(
   LearnerSubmissions[0].submission.score,
-  assignmentGroup.assignments[1].points_possible,
+  AssignmentGroup.assignments[1].points_possible,
   LearnerSubmissions[1].submission.score,
-  assignmentGroup.assignments[0].points_possible
+  AssignmentGroup.assignments[0].points_possible
 );
 
 console.log(firstStudent);
@@ -161,9 +161,9 @@ console.log(firstStudent);
 // Second student average variable .. Note I changed possible_points last index[2] to 125 from 500 because 125 wasn't listed
 const secondStudent = addAll(
   LearnerSubmissions[3].submission.score,
-  assignmentGroup.assignments[2].points_possible,
+  AssignmentGroup.assignments[2].points_possible,
   LearnerSubmissions[1].submission.score,
-  assignmentGroup.assignments[0].points_possible
+  AssignmentGroup.assignments[0].points_possible
 );
 
 console.log(secondStudent);
@@ -183,7 +183,7 @@ console.log(scorePoints(10, 2));
 // stored the results in an variable
 const firstScore = scorePoints(
   LearnerSubmissions[0].submission.score,
-  assignmentGroup.assignments[0].points_possible
+  AssignmentGroup.assignments[0].points_possible
 );
 console.log(firstScore);
 
@@ -191,7 +191,7 @@ console.log(firstScore);
 // stored the second calculation in a variable
 const firstScore1 = scorePoints(
   LearnerSubmissions[1].submission.score,
-  assignmentGroup.assignments[1].points_possible
+  AssignmentGroup.assignments[1].points_possible
 );
 
 //======== END of first student's calculation ======
@@ -202,7 +202,7 @@ const firstScore1 = scorePoints(
 // ONE: creating a variable to store the calculation of first part
 const secondScore = scorePoints(
   LearnerSubmissions[3].submission.score,
-  assignmentGroup.assignments[0].points_possible
+  AssignmentGroup.assignments[0].points_possible
 );
 console.log(secondScore);
 
@@ -211,29 +211,13 @@ console.log(secondScore);
 const secondLateScore = function () {
   const count =
     (LearnerSubmissions[4].submission.score - 15) /
-    assignmentGroup.assignments[1].points_possible;
+    AssignmentGroup.assignments[1].points_possible;
   return count;
 };
 
 console.log(secondLateScore());
 
 // creating a function to hold and retrieve the data
-
-function theResults() {
-  const allData = [
-    {
-      id: callCourse,
-      avg: firstStudent,
-      1: secondScore,
-      2: secondScore,
-    },
-  ];
-  return allData;
-}
-
-// console.log(theResults());
-
-// new function
 
 function getLearnerData(course, avg, sub) {
   const allData = [
@@ -245,10 +229,31 @@ function getLearnerData(course, avg, sub) {
     {
       course: callID2(),
       avg: secondStudent,
-      sub: firstScore1,
+      sub: `1: ${firstScore1}, 2: ${secondLateScore()}`,
     },
   ];
   return allData;
 }
 
-console.log(getLearnerData(CourseInfo, assignmentGroup, assignmentGroup));
+// logging the results
+console.log(getLearnerData(CourseInfo, AssignmentGroup, AssignmentGroup));
+
+// storing the results in a variable
+const dataReturn = getLearnerData(CourseInfo, AssignmentGroup, AssignmentGroup);
+
+// logging the dataResults
+console.log(dataReturn);
+
+// try/catch error
+// if both ID'd are referenced
+const idError = () => {
+  try {
+    if (CourseInfo.id === AssignmentGroup.id) {
+      console.log(`Two different ID's ${CourseInfo.id} ${AssignmentGroup.id}`);
+    } else {
+      throw "Two different ID's with different reference place in an object array and in and array of objects";
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
