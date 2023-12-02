@@ -257,3 +257,5 @@ const idError = () => {
     console.log(err);
   }
 };
+
+console.log(idError());
