@@ -1,6 +1,18 @@
-// this is to work easily on the code
+// try/catch error
+// if both ID'd are referenced
+const idError = () => {
+  try {
+    if (CourseInfo.id === AssignmentGroup.id) {
+      console.log(`Two different ID's ${CourseInfo.id} ${AssignmentGroup.id}`);
+    } else {
+      throw "Two different ID's with different reference place in an object array and in and array of objects";
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-// there must be a variable that holds the whole
+console.log(idError());
 
 // an object of the course
 const CourseInfo = {
@@ -236,26 +248,10 @@ function getLearnerData(course, avg, sub) {
 }
 
 // logging the results
-console.log(getLearnerData(CourseInfo, AssignmentGroup, AssignmentGroup));
+// console.log(getLearnerData(CourseInfo, AssignmentGroup, AssignmentGroup));
 
 // storing the results in a variable
 const dataReturn = getLearnerData(CourseInfo, AssignmentGroup, AssignmentGroup);
 
 // logging the dataResults
 console.log(dataReturn);
-
-// try/catch error
-// if both ID'd are referenced
-const idError = () => {
-  try {
-    if (CourseInfo.id === AssignmentGroup.id) {
-      console.log(`Two different ID's ${CourseInfo.id} ${AssignmentGroup.id}`);
-    } else {
-      throw "Two different ID's with different reference place in an object array and in and array of objects";
-    }
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-console.log(idError());
