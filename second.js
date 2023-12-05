@@ -1,26 +1,10 @@
-// try/catch error
-// if both ID'd are referenced
-const idError = () => {
-  try {
-    if (CourseInfo.id === AssignmentGroup.id) {
-      console.log(`Two different ID's ${CourseInfo.id} ${AssignmentGroup.id}`);
-    } else {
-      throw "Two different ID's with different reference place in an object array and in and array of objects";
-    }
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-console.log(idError());
-
 // an object of the course
 const CourseInfo = {
   id: 451,
   name: "introduction to JavaScript",
 };
 
-// function to retrieve info from the courseInFo
+// function to retrieve ids from the CourseInFo
 const callCourse = function () {
   for (const c in CourseInfo) {
     return `${c}: ${CourseInfo.id}`;
@@ -187,8 +171,6 @@ console.log(secondStudent);
 function scorePoints(h, p) {
   return h / p;
 }
-// logged the function to check if it's working, and it is
-console.log(scorePoints(10, 2));
 /// =============================== END of this function
 
 ///ONE: first student division score/point_possible =========
@@ -229,8 +211,10 @@ const secondLateScore = function () {
 
 console.log(secondLateScore());
 
+console.log(
+  "============== The results are after this console ================="
+);
 // creating a function to hold and retrieve the data
-
 function getLearnerData(course, avg, sub) {
   const allData = [
     {
@@ -255,3 +239,20 @@ const dataReturn = getLearnerData(CourseInfo, AssignmentGroup, AssignmentGroup);
 
 // logging the dataResults
 console.log(dataReturn);
+
+//====================================
+// try/catch error
+// if both ID'd are referenced
+const idError = () => {
+  try {
+    if (CourseInfo.id === AssignmentGroup.id) {
+      console.log(`Two different ID's ${CourseInfo.id} ${AssignmentGroup.id}`);
+    } else {
+      throw "Two different ID's with different reference place in an object array and in and array of objects";
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+console.log(idError());
