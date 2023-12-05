@@ -164,7 +164,7 @@ function CourseInfo() {
 
 CourseInfo();
 
-// this code was in  the second.js there but don't know if I need it i"m storing it here
+// this code was in  the script.js there but don't know if I need it i"m storing it here
 // getting the students score
 function averageCount(learn1, learn2) {
   for (let i = 0; i < LearnerSubmissions.length; i++) {
